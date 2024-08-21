@@ -1,0 +1,315 @@
+I don't want to clog up our coding space
+I have no idea what you're talking about :p
+
+About clogging up our space or about Fermat's Little Theorem?
+
+Does math kill your ability to locate sarcasm?
+No isolation did
+Aww, sorry. Just come back to ASMSA with me. That'll fix it.
+Pretty sure they wouldn't let me
+I mean, you did promise. I'm just saying to do it a little more permenantely
+There's no such thing as a 'little more permenantely'
+Well apparently there is a "little theorem"
+
+Yes, not to be confused with his Last Theorem, Two Square Theorem, Tangent theorem, or any other theorems that all for some reason have Fermat's name
+I guess that's kinda how it goes in number theory because there aren't a lot of very descriptive naming convetions
+
+It's either Fermat or Euler, huh?
+Hey now
+If you're in linear algebra/Statistics/Topology/Physics/abstract algebra then it might be Gauss
+Like the curve?
+
+Yeah like the curve
+
+
+Anyways, are you prepared to know the ultimate secret of number theory?!?!?!?
+Yah, i'm prepared to learn number thoory :p
+
+I'm sure you familiar with modular arithmetic
+Maybe if you didn't use the fancy name.
+I'm sure you're familiar with %
+OOOH mod. Yah I know what that does.
+
+Well it only really makes sense to use that with integers, right?
+You can't exactly mod 5 by 3/2
+
+I mean, theoretically you could. 3/2 goes into 5... twice leaving behind... 2? Or is it thrice leaving behind 1/2?
+
+Well if you want to perform the modulo operation on 5 mod 3/2, then it would start by getting the quotient, which is just 5/(3/2) rounded down so q = 3                 [ 5/(3/2) = 3.33333 ]
+Then you subtract the quotient times (3/2) from 5 to find the remainder (which is what 5 % 3/2 is)
+So 5 % 3/2 = 1/2
+Hey, I got it in two. I did 3/2 is 1.5, and then subtract 1.5 from 5 until you can't anymore, and what's left is the result of the mod.
+
+So I don't mean that you can't do the modulo operation on fractions or irrational numbers
+But it actually does become less meaningful, because their representations aren't unique
+
+There's an important theorem in number theory calle Bézout's Lemma which tells us that every number n can be written as n = a*q + r in a unique way, where 0 < r < n-1 or some shit like that
+
+Uh uh.. I think I follow
+Like, 1 = 1 * 1 + 0
+
+Actually no, you're using exponentiation
+Ah yah, misinterpreted the *. Read it as a **.  Classic programmer mistake
+
+In the 1 = 1*1 + 0 example, you choose 1 to be the number you're comparing it to, so if you want to write 1 in terms of 1, the quotient is 1 and the remainder is 0
+The remainder being 0 is another way of saying that the thing being compared is divisible by the number a you choose to comnpare against
+
+If you notice, when you choose 1 to compare against then the quotient will always be zero, since n will always be equal to n = 1*n + 0
+
+So a better comparison would be
+5 = 2 * 2 + 1?       0 < r < n-1 this is the condition on r (the thing you're subtracting) 
+Ah so it can't be negative.
+There ya go
+And because of Bézout's Lemma, you can be sure that there is no other way of writing 5 as 2q + r
+The only solution that fits our constraints is (q,r) = (2,1)
+
+
+It really says something else which I'll just copy from notes:
+
+Bézout's identity — Let a and b be integers with greatest common divisor d. Then there exist integers x and y such that ax + by = d. Moreover, the integers of the form az + bt are exactly the multiples of d.
+
+
+But in proving this, you also come across the way of uniquely writing a number in terms of another using only the quotient and remainder
+
+
+So if a number is prime, the only way you can get to it is by r being greater than one? Since it can't be a multiple of a or q
+Well the reason we insist the r be between 1 and n-1 is because we want unique solutions
+If we allowed for any numbers, then if x is x solution mod n, then so is x+n, and x+2n, and so on
+Since we don't want infinite solutions to our problem, we make the choice to take the numbers between 1 and the modulus (n)
+This set of integers between 0 and and n-1 are called the residues of n
+So the residues of 5 are {0,1,2,3,4}
+We don't include 5 since 0 = 5 mod 5, we don't include 6 since 6 = 1 mod 5
+
+So it's a redundacny thing
+
+Yeah pretty much
+We want a single solution, so we make the arbitrary choice to take our solution from this range
+But it doesn't really matter since we could easily get every other one of the infinite solutions
+1 = 1 + 5 = 1 + 2*5 = 1 + 3*5 mod 5 and so on
+
+Also I should mention that we did that whole thing with Bézout because it's what let's us do modular arithmetic
+Or at least it tells us what it means
+If x = a mod n, then that also means that x-a = 0 mod n
+So x-a must divide n
+In other words there's a q such that n = q(x-a)
+
+So, 1 = 5 mod 2, so (1 - 5) = -4 = 0 mod 2      yep since -4 = -4 + 2(2) = 0 mod 2      because anything mod 0 is 0?
+We can't exactly mode by 0    you know what I mean. Saying "0 mod" instead of "mod 0" just kinda reads wrong to me.
+If a = b mod 0, then there would be some q where q(a-b) = 0
+but if this is the case then neither option is particularly interesting
+Either a = b, which could be the case but we want distinct solutions
+But then the only other option is q = 0, which isn't unique because it maps every single number to 0
+
+You could say 0 mod anything is zero
+
+...yah... but it's a little late for that now. totally.
+
+At least you gained a few extra experience points
+We got there in the end.
+
+Now I think we can move on to fermat's little theorem
+
+-------------------- Queue Fanfaire ------------------------ *drumroll*
+FERMAT'S LITTLE THEOREM
+THE STEEL FOUNDATIONS OF MODERN NUMBER THEORY 
+A TESTEMENT TO THE INGENUITY OF ONE ITALIAN LAWER
+(and I guess also Euler later on)
+FLM (which I will be calling it from now on), on a base level, is just used to calculate modular exponents
+
+It says that if you have a prime number p, then for any number x that is coprime to p, the following will always hold:
+x^(p-1) = 1 mod p
+(coprime just means that both numbers share no factors that aren't 1, or that GCD(x,p) = 1)   if it's a prime number, shouldn't there be no factors anyway?
+Sure p doesn't have any factors, but that doesn't stop x from having a factor of p
+Oh so like 3 and 6?     Yes
+
+So take 5 for example
+a^4 = 1 iff GCD(a,5) = 1 (which it will for everything that isn't a multiple of 5)
+Let's make a little table   This seems like it makes big numbers very fast      whatchu mean?   n^4, mostly. I suppose the computer does that bit in the background, though.
+n           |   1     2     3     4     5
+n^4 mod 5   |   1    16=1  81=1 256=1 625=0
+
+You're thinking in the wrong direction
+n^4 is the big number that we're trying to prove is just 1
+
+It's usually used in longer calculations
+Like for example, what if you were asked to calculate 2916 mod 7
+You could do the algorithm, but that might take a while
+
+So an easier way to do it is to just factor the number, and you'll see that it's really asking for
+4*3^6 mod 7
+And because of FLT, we know that 3^6 = 1 mod 7      (since 3 is clearly coprime to 7)
+So 2916 = 4*3^6 = 4(1) = 4 mod 7
+
+while this is a very helpful application of the theorem, it's definitely not the most important
+There are several large subjects that rely on FLT, such as the primality test we're cooking up
+
+I think I follow so far
+---------------------------------------------------------------------------------------------------------------------------
+Well I think that's all we need for Miller-Rabin
+Oooh wait, maybe we should take about factoring differences of squares first
+Do you remember the formula for x^2 - 1?    Difference of squares was something like a^2 + 2ab + b^2    That's (a+b)^2
+
+The difference of squares formula is x^2-1 = (x-1)(x+1)     ooh yah i'm an idiot    classic mistake
+Using this formula, we can actually factor any power of 2 for the exponent
+
+x^2 - 1 = (x-1)(x+1)
+x^4 - 1 = (x^2-1)(x^2+1) = (x-1)(x+1)(x^2+1)
+x^8 - 1 = (x^4-1)(x^4+1) = (x-1)(x+1)(x^2+1)(x^4+1)
+
+See the pattern here?
+
+Yah, I think. It's the previous factor plus (or i guess times in this case) the previous power.
+
+Right
+So if x_(n-1) is the previous expression, then x_n = x_(n-1)(x^(n/2)-1)
+And its fine if it's not a power of two, since we can still apply the difference of squares formula
+
+x^6 - 1 = (x^3-1)(x^3+1)
+x^10 - 1 = (x^5-1)(x^5+1)
+
+If we want to check if a number n is prime with the miller-rabin test, then the point of doing this factoring is to find not another way to represent n, but a way to represent n-1
+Which is just as important because of FLT
+
+So we're trying to find the x_(n-1) in the line 164 formula?    Well supposedly we'd have already calculated x_(n-1), and that formula tells us how to get from there to x_n
+Like how we go from x^2-1=(x-1)(x+1) --> x^4-1=(x-1)(x+1)(x^2+1)    Right cuz we need one to know the other
+
+If you want a general formula, then you'd have to write it as a^b = a^(2^n * k)     (so b = 2^n*k, which I'm allowed to do since we said b has to be even)
+
+Then a^(2^n * k) - 1 = (a^k-1)(a^k+1)(a^(2k) + 1)(a^(2^2*k) + 1)(a^(2^3*k) + 1)...(a^(2^(n-1)*k) + 1)
+This is the actual form we use for Miller Rabin
+And it starts with writing the number like this
+Or really that number minus 1
+
+
+Suppose the number we're checking is n, and it's odd since it would automatically be composite if it weren't
+Then, since n is odd, n-1 must be even and contain some factors of 2
+From there we just factor every power of two out
+
+Let's take n = 721
+Then n - 1 = 720 = 2^4 * 45         (we don't care about any other factor but 2)   
+So do we need to add this step to our code?
+
+Well yes, but I'm more worried about parsing it
+Since from this stage, we introduce a new parameter
+This is why Miller-Rabin is probablistic, since it is possible, by pure chance, that we choose the parameter so that the tests tells us that n is not composite
+
+The test can only tell us for sure that a number is composite
+If you apply the test over and over, and each time it doesn't confirm that n is composite, then the chance of it being prime go up 
+
+So we know a number is prime if it isn't composite? Lol, checks out.
+That may sound silly, but it is how the test works
+We can do it enough times to be 99.9999% sure that the number is prime, but we can never be positive
+However the test is good enough that it somehow is more accurate that a deterministic method within 5 witnesses
+A deterministic algorithm, which can tell you with certainty whether a number is prime or not, has a higher chance to bug out due to solar rays than Miller-Rabin has to fail
+
+So if we run it 5 times, and all 5 return that it isn't composite, it's most likely prime?
+
+yep
+In fact, the first odd composite number that doesn't have 2 or 3 as Miller-Rabin witnesses is 1,373,652 
+< Miller-Rabin witnesses are to n-1, so it would be checking if 1,373,543 is prime >
+For every number less than this, we only need to run miller-rabin at most twice
+
+Well if it's fast enough, we might as well run it 4 or 5 times
+I think we're good
+Could you have python print out 10^10 for me real quick?
+Every number less 10,000,000,000 (10 billion) has 2,3,5, or 7 as witnesses
+I think we're good then, lol. Run times are at least easily modifiable. Just tweak a for loop.
+
+So thus far, we have n = 721 and n-1 = 720 = 2^4*45
+How are you getting those factors so fast? Probably not very important, but impressive nontheless.
+Well we only care about the factors of two 
+If I were to fully factorize it, I'd do something like 720 = 2^4*45 = 2^4(5*9) = 2^4*5*9
+But since we only care about the factors of 2, I just divided 720 by 2 until I got an odd number
+
+Like I said ealier, this is where we introduce a new parameter, and that's in order to make this look like those polynomial we were factoring earlier
+
+n-1 = 2^4*45
+x^(n-1) = x^(2^4*45)
+x^(n-1) - 1 = x^(2^4*45) - 1
+
+Here x is the new parameter, a variable we threw in in order to have more freedom and make the expression look how we want it
+We use this technique, of not liking the current state of things so we just make it look different so we can do special things to it quite often
+It's always fun when math just makes up numbers.
+In fact that's just the algorithm they use to solve 2nd order linear DEs
+
+I guess we kinda are
+We're inserting a number that we can change later
+These choices we make for x are what will become our Miller-Rabin witnesses
+
+Oh so x is just a specific number to test against   mhmm
+
+From that last line (since n-1=720) we have
+
+x^720 - 1 = x^(2^4*45) - 1
+
+Checks out, since 2^4*45 is 720.
+
+But if you notice the right hand side is a polynomial of the same form as the ones we were factoring earlier
+x to an even power, minus 1
+And we have a formula from earlier to expand it, or we can just use the algorithm
+
+x^720 - 1 = x^(2^4*45)-1 = (x^(2^3*45)-1)(x^(2^3*45)+1) = (x^(2^2*45)-1)(x^(2^2*45)+1)(x^(2^3*45)+1)
+ = (x^45-1)(x^45+1)(x^(2*45)+1)(x^(2^2*45)+1)(x^(2^3*45)+1)
+
+ That's a lot lol. I think I see how it expands out, though.
+ Okay good because I didn't wan't to have to do the rest
+
+ But remember, the specifics of the RHS don't matter yet
+ On the left side, we have something that looks very similar to FLT
+ Here's where we make our assumption that n is prime
+since if n is prime, by FLT, x^720 = 1 mod 721, so x^720-1 = 0 mod 721
+
+So we're about to go from regular integer land, to integer mod 721 land
+By our assumption that n is prime (and GCD(x,n) = 1), we know that
+
+x^720 - 1 = (x^45-1)(x^45+1)(x^(2•45)+1)(x^(2^2•45)+1)(x^(2^3•45)+1) = 0 mod 721
+
+So if this is false, then it's composite?
+Yes, that's the test. I'm glad you understand
+
+Now ordinarily, we'd have to be careful about using the zero product law (if a•b•c = 0, then a, b, or c is 0)
+Since it's not always true in a ring like modular arithmetic (ex. 2 * 5 = 0 mod 10, but 2 != 0 and 5 != 0) 👍(windows key + .) (👌) (🤓) (🌹)(❤️)
+However, we sidestep this problem completely because we assume that n is prime
+Not to get off in a tangent, but it turns out that you can't just divide both sides of a modular expression unless the thing you're dividing by is coprime to the modulus
+
+So because we assume n is prime, and that means the zero product law holds, the expression
+(x^45-1)(x^45+1)(x^(2•45)+1)(x^(2^2•45)+1)(x^(2^3•45)+1) = 0 mod 721
+Means that IF our assumption is true (n is prime) then one of these factors must be 0
+No matter what we choose x to be
+
+If you were about to question x^(some bullshit) ever being -1 then you'd be correct if we were still working with the integers
+But since we're doing modular arithmetic every number is equivalent some some negative number
+For example, here -1 is exactly the same thing as 720   (technichally, they are in the same equivalence class and not EXACTLY the same)
+Because they mod the same?
+Yeah, and -1 + 721 = 720
+
+So because of the expression on line 276, our assumption holding would imply that one of those factors is zero, so if we calculate all of them and none are zero, that means our assumption was false and that we can say that n is definitely composite
+
+Sounds easy enough for a computer
+
+So iff n = 721 is prime, then at least one out of the following must hold
+x^45 = 1
+x^45 = -1
+x^(2•45) = -1       < Wait, if this isn't true
+x^(4•45) = -1       < This DEFINTALY won't be true (at least with the example we've been using)
+x^(8•45) = -1           
+Well again that would be the case over the integers, but we're not working with the integers, we're working with the integers mod 721
+And a ring is extremely different than a field
+So's not exactly x^45 = 1, it's x^45 % 721 = 1
+
+Right. I should have specified that when we start working over the integers mod n, then it's common to drop the % n
+It would be less confusing if I could use the congruence symbol
+
+This might be a bit soon to ask, but how do we assign X? do we just pick a prime number and roll with it?
+Well we usually go sequencially. So if we just use like the first 30 prime numbers that would probably give us good accuracy
+
+We use the Miller-Rabin to fortify the Miller-Rabin
+
+Of course our assumption ensures that one of the criteria is true, but that does not imply that if the criteria is true, our assumption is true
+So the best we can do is gather more evidence
+
+Can you write functions in the terminal?
+Can you not? I gave you permission
+ OK now you're here?
+ Mabaps
+ Ok so you follow me to main and the notes, but not miller
