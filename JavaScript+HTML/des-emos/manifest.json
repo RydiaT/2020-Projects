@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Des-Emos",
+  "version": "1.0",
+  "description": "Makes Desmos listen to My Chemical Romance (Desmos dark mode).",
+  "icons": {
+    "48": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.desmos.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "permissions": ["activeTab"]
+}

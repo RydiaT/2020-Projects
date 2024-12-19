@@ -1,0 +1,59 @@
+body {
+    background-color: darkslategrey; !important;
+    color: white; !important;
+}
+
+html body .dcg-graph-inner {
+    background-color: #3a5e5e; !important;
+    color: white; !important;
+}
+
+.dcg-graph-inner .dcg-expression {
+    stroke: yellow; !important;
+}
+
+.dcg-point {
+    fill: aquamarine; !important;
+    stroke: aquamarine; !important;
+}
+
+.dcg-axis {
+    stroke: white; !important;
+}
+
+/*.dcg-label {*/
+/*    background-color: black; !important;*/
+/*    color: white; !important*/
+/*}*/
+
+html body .dcg-calculator-api-container-v1_10 .dcg-poi-label.dcg-show-border .dcg-label {
+    background: black; !important;
+    color: white; !important
+}
+
+html body .dcg-calculator-api-container-v1_10 .dcg-container {
+    background: darkgrey; !important;
+}
+
+html body .dcg-calculator-api-container-v1_10 .dcg-expressionitem.dcg-new-expression .dcg-new-math-div .dcg-new-expression-fade {
+    background: linear-gradient(to top, darkgrey, #7c7b7b 50%);
+    width: 39px;
+}
+
+html body .dcg-calculator-api-container-v1_10 .dcg-exppanel .dcg-expressionitem .dcg-tab {
+    color: white;
+    background: #7c7b7b;
+}
+
+html body .dcg-calculator-api-container-v1_10 .dcg-container .dcg-mq-editable-field:not(.dcg-no-fadeout):after {
+    background: linear-gradient(to left, darkgrey, rgba(255, 255, 255, 0) 50%);
+}
+
+html body .dcg-calculator-api-container-v1_10 .dcg-container .dcg-mq-editable-field:not(.dcg-no-fadeout) .dcg-mq-root-block.dcg-mq-editing-overflow-left:before {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), darkgrey 50%);
+}
+
+html body .dcg-graph-inner line {
+    stroke: white !important;
+    stroke-width: 2px;
+}
