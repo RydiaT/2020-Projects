@@ -16,7 +16,7 @@ void draw() {
   if (!mousePressed) {
     game.frame();
   } else {
-    randomFlip(game.getGrid());
+    mouseFlip(game.getGrid());
     // mouseFlip(game.getGrid());
   }
 }
